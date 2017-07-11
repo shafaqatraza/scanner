@@ -1,0 +1,22 @@
+<%= form_with(model: bar_code, local: true) do |form| %>
+  <% if bar_code.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bar_code.errors.count, "error") %> prohibited this bar_code from being saved:</h2>
+
+      <ul>
+      <% bar_code.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :text %>
+    <%= form.text_area :text, id: :bar_code_text %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
